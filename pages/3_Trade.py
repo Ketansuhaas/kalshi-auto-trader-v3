@@ -11,7 +11,7 @@ if 'username' in st.session_state and 'password' in st.session_state and 'pred' 
         st.session_state['contracts'] = int(contracts)
         st.session_state['price'] = int(price)
         if st.button('Trade?'):
-            st.text(f'Initiating trade for {st.session_state['contracts']'} contracts')
+            st.text(f"Initiating trade for {st.session_state['contracts']} contracts")
             st.text('Trade in progress...')
             make_trade(ticker,ex,st.session_state['contracts'],st.session_state['price'])
             st.text('Trade successfully completed')
