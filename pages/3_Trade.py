@@ -6,13 +6,13 @@ if 'username' in st.session_state and 'password' in st.session_state and 'pred' 
     st.text(f"Suitable market: {ticker}")
     st.text(f"Available balance in cents: {ex.get_balance()['balance']}")
     contracts = st.text_input('No. of contracts')
-    price = st.text_input('Price limit in cents')
+    price = st.text_input('Max Profit in cents')
     if contracts!="" and price!="":
         st.session_state['contracts'] = int(contracts)
         st.session_state['price'] = int(price)
         if st.button('Trade?'):
             st.text(f"Initiating trade for {st.session_state['contracts']} contracts")
-            st.text(f"Price limit set at {st.session_state['price']} cents")
+            st.text(f"Price limit set at {100-st.session_state['price']} cents")
             st.text('Trade in progress...')
             make_trade(ticker,ex,st.session_state['contracts'],st.session_state['price'])
             st.text('Trade successfully completed')
