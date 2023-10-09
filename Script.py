@@ -73,8 +73,8 @@ def make_trade(best_ticker,exchange_client,contracts,price):
                     'action':'buy',
                     'side':'yes',
                     'count':contracts,
-                    'yes_price':None, # yes_price = 100 - no_price
-                    'no_price':price, # no_price = 100 - yes_price
+                    'yes_price':price, # yes_price = 100 - no_price
+                    'no_price':None, # no_price = 100 - yes_price
                     'expiration_ts':None,
                     'sell_position_floor':None,
                     'buy_max_cost':None}
