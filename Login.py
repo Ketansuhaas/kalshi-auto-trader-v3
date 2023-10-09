@@ -5,8 +5,7 @@ from Script import *
 st.title('Kalshi Auto-Trader')
 username = st.text_input('Kalshi username:')
 password = st.text_input('Kalshi password:',type = "password")
-st.text(username)
-st.text(password)
+
 if username!="" and password!="":
     st.session_state['username'] = username
     st.session_state['password'] = password
